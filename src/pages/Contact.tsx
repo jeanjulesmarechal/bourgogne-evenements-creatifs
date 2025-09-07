@@ -23,6 +23,7 @@ const Contact = () => {
     message: '',
     honeypot: '', // Champ piège à spam
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const { executeRecaptcha } = useGoogleReCaptcha();
   const { isSubmitting, submitError, submitSuccess, submitForm, resetForm } = useEmailJS();

@@ -6,11 +6,8 @@ interface ReCaptchaProviderProps {
 }
 
 const ReCaptchaProvider = ({ children }: ReCaptchaProviderProps) => {
-  // Clé publique reCAPTCHA (à remplacer par votre vraie clé)
-  // Pour le développement local, utilisez une clé de test ou désactivez temporairement
-  const recaptchaSiteKey = process.env.NODE_ENV === 'development' 
-    ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Clé de test pour localhost
-    : 'votre_cle_production'; // Clé de production
+  // Clé publique reCAPTCHA - utilise la variable d'environnement ou une clé de test
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
   return (
     <GoogleReCaptchaProvider
