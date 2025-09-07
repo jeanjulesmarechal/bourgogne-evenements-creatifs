@@ -50,13 +50,13 @@ const Header = () => {
             Accueil
           </Link>
           <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
-            Services
+            Notre Expertise
           </a>
-          <a href="#a-propos" className="text-foreground hover:text-primary transition-colors font-montserrat">
-            À propos
+          <a href="#pourquoi-nous" className="text-foreground hover:text-primary transition-colors font-montserrat">
+            Pourquoi nous choisir
           </a>
-          <a href="#realisations" className="text-foreground hover:text-primary transition-colors font-montserrat">
-            Réalisations
+          <a href="#mission" className="text-foreground hover:text-primary transition-colors font-montserrat">
+            Notre Mission
           </a>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
             Contact
@@ -88,13 +88,13 @@ const Header = () => {
                 Accueil
               </Link>
               <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
-                Services
+                Notre Expertise
               </a>
-              <a href="#a-propos" className="text-foreground hover:text-primary transition-colors font-montserrat">
-                À propos
+              <a href="#pourquoi-nous" className="text-foreground hover:text-primary transition-colors font-montserrat">
+                Pourquoi nous choisir
               </a>
-              <a href="#realisations" className="text-foreground hover:text-primary transition-colors font-montserrat">
-                Réalisations
+              <a href="#mission" className="text-foreground hover:text-primary transition-colors font-montserrat">
+                Notre Mission
               </a>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
                 Contact

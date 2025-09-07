@@ -288,22 +288,6 @@ const Contact = () => {
               </div>
 
               <div className="space-y-6">
-                <Card className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start">
-                      <div className="p-3 rounded-full bg-primary/10 mr-4">
-                        <MapPin className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Adresse</h4>
-                        <p className="font-montserrat text-foreground/80">
-                          15 Place de la Libération<br />
-                          21000 Dijon, France
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
 
                 <Card className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
@@ -313,7 +297,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Téléphone</h4>
-                        <p className="font-montserrat text-foreground/80">+33 3 80 XX XX XX</p>
+                        <p className="font-montserrat text-foreground/80">+33 6 68 59 98 46</p>
                         <p className="font-montserrat text-sm text-foreground/60 mt-1">Lun - Ven : 9h00 - 18h00</p>
                       </div>
                     </div>

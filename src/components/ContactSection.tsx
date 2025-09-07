@@ -95,22 +95,12 @@ const ContactSection = () => {
                 </h3>
                 
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-primary mr-3 mt-1" />
-                    <div>
-                      <h4 className="font-montserrat font-semibold mb-2 text-foreground">Adresse</h4>
-                      <p className="font-montserrat text-foreground/80">
-                        15 Place de la Libération<br />
-                        21000 Dijon, France
-                      </p>
-                    </div>
-                  </div>
                   
                   <div className="flex items-start">
                     <Phone className="w-5 h-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-montserrat font-semibold mb-2 text-foreground">Téléphone</h4>
-                      <p className="font-montserrat text-foreground/80">+33 3 80 XX XX XX</p>
+                      <p className="font-montserrat text-foreground/80">+33 6 68 59 98 46</p>
                     </div>
                   </div>
                   

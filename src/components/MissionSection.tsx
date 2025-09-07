@@ -5,7 +5,7 @@ const MissionSection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="relative py-32 md:py-32 py-4 bg-secondary md:bg-secondary bg-white">
+    <section id="mission" className="relative py-32 md:py-32 py-4 bg-secondary md:bg-secondary bg-white">
       {/* Desktop Background */}
       <div className="absolute inset-0 z-0 hidden md:block">
         <img src="/placeholder.svg" alt="Notre mission" className="w-full h-full object-cover opacity-10" />

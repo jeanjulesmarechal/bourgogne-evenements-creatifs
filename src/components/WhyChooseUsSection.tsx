@@ -23,7 +23,7 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-20 py-4 bg-white">
+    <section id="pourquoi-nous" className="py-20 md:py-20 py-4 bg-white">
       <div className="container mx-auto px-4">
         {/* Desktop Version */}
         <div className="hidden md:block">
