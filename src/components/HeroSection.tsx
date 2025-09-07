@@ -22,7 +22,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl font-montserrat font-futura-bold mb-6 leading-tight md:whitespace-nowrap">
             <span style={{ color: '#000000' }}>Votre évènement</span>
             <br className="md:hidden" />
-            <span style={{ color: '#611427' }}>est né</span>
+            <span style={{ color: '#611427' }}> est né</span>
           </h1>
 
           <p className="text-xl md:text-2xl font-montserrat mb-12 text-foreground/80 max-w-2xl mx-auto">
