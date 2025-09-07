@@ -1,0 +1,243 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const ContactSimple = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    console.log('Formulaire soumis (version simple)');
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
+      <Header />
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-montserrat font-futura-bold text-foreground mb-6 animate-fade-in">
+              <span style={{ color: '#000000' }}>Parlons de votre </span>
+              <span style={{ color: '#611427' }}>projet</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-foreground/80 font-montserrat mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Transformons ensemble votre vision en expérience d'exception
+            </p>
+            <div className="w-24 h-1 bg-primary mx-auto animate-scale-in" style={{ animationDelay: '0.4s' }}></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Formulaire et Informations */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {/* Formulaire de contact */}
+            <div className="space-y-8">
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl font-montserrat font-futura-bold text-foreground mb-4">
+                  Créons votre événement
+                </h2>
+                <p className="text-lg text-foreground/70 font-montserrat">
+                  Partagez-nous vos idées, nous les concrétiserons avec excellence
+                </p>
+              </div>
+
+              {!isSubmitted ? (
+                <Card className="bg-card border-border shadow-xl animate-scale-in">
+                  <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                    <CardTitle className="text-2xl font-montserrat font-futura-bold text-foreground flex items-center">
+                      <Send className="w-6 h-6 mr-3 text-primary" />
+                      Demande personnalisée
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-8">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="firstName" className="text-foreground font-montserrat font-semibold">Prénom *</Label>
+                          <Input 
+                            id="firstName" 
+                            className="border-border focus:ring-primary font-montserrat mt-2" 
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="lastName" className="text-foreground font-montserrat font-semibold">Nom *</Label>
+                          <Input 
+                            id="lastName" 
+                            className="border-border focus:ring-primary font-montserrat mt-2" 
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="company" className="text-foreground font-montserrat font-semibold">Société *</Label>
+                        <Input 
+                          id="company" 
+                          className="border-border focus:ring-primary font-montserrat mt-2" 
+                          required
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="email" className="text-foreground font-montserrat font-semibold">Email *</Label>
+                          <Input 
+                            id="email" 
+                            type="email" 
+                            className="border-border focus:ring-primary font-montserrat mt-2" 
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="phone" className="text-foreground font-montserrat font-semibold">Téléphone</Label>
+                          <Input 
+                            id="phone" 
+                            type="tel" 
+                            className="border-border focus:ring-primary font-montserrat mt-2" 
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="projectType" className="text-foreground font-montserrat font-semibold">Type de projet *</Label>
+                        <Select required>
+                          <SelectTrigger className="border-border focus:ring-primary font-montserrat mt-2">
+                            <SelectValue placeholder="Sélectionnez votre besoin" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="team-building">Team-building</SelectItem>
+                            <SelectItem value="seminaire">Séminaire</SelectItem>
+                            <SelectItem value="convention">Convention</SelectItem>
+                            <SelectItem value="lancement">Lancement produit</SelectItem>
+                            <SelectItem value="formation">Formation</SelectItem>
+                            <SelectItem value="conference">Conférence</SelectItem>
+                            <SelectItem value="autre">Autre</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="message" className="text-foreground font-montserrat font-semibold">Décrivez votre projet</Label>
+                        <Textarea 
+                          id="message" 
+                          placeholder="Parlez-nous de votre événement : objectifs, nombre de participants, date souhaitée, contraintes particulières..."
+                          className="border-border focus:ring-primary font-montserrat mt-2 min-h-[140px]"
+                        />
+                      </div>
+
+                      <Button 
+                        type="submit"
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg py-4 transition-all duration-300 hover:shadow-lg"
+                        style={{ backgroundColor: '#611427' }}
+                      >
+                        <Send className="w-5 h-5 mr-2" />
+                        Envoyer ma demande
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              ) : (
+                <Card className="bg-card border-border shadow-xl animate-scale-in">
+                  <CardContent className="p-12 text-center">
+                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
+                    <h3 className="text-2xl font-montserrat font-futura-bold text-foreground mb-4">
+                      Demande envoyée !
+                    </h3>
+                    <p className="text-foreground/70 font-montserrat mb-6">
+                      Merci pour votre confiance. Notre équipe vous contactera dans les plus brefs délais.
+                    </p>
+                    <Button 
+                      onClick={() => setIsSubmitted(false)}
+                      variant="outline"
+                      className="font-montserrat"
+                    >
+                      Nouvelle demande
+                    </Button>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
+            {/* Informations de contact */}
+            <div className="space-y-8">
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl font-montserrat font-futura-bold text-foreground mb-4">
+                  Nos coordonnées
+                </h2>
+                <p className="text-lg text-foreground/70 font-montserrat">
+                  Plusieurs façons de nous joindre
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <Card className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start">
+                      <div className="p-3 rounded-full bg-primary/10 mr-4">
+                        <MapPin className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Adresse</h4>
+                        <p className="font-montserrat text-foreground/80">
+                          15 Place de la Libération<br />
+                          21000 Dijon, France
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start">
+                      <div className="p-3 rounded-full bg-primary/10 mr-4">
+                        <Phone className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Téléphone</h4>
+                        <p className="font-montserrat text-foreground/80">+33 3 80 XX XX XX</p>
+                        <p className="font-montserrat text-sm text-foreground/60 mt-1">Lun - Ven : 9h00 - 18h00</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start">
+                      <div className="p-3 rounded-full bg-primary/10 mr-4">
+                        <Mail className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Email</h4>
+                        <p className="font-montserrat text-foreground/80">contact@eclosion-events.fr</p>
+                        <p className="font-montserrat text-sm text-foreground/60 mt-1">Réponse sous 24h</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default ContactSimple;
+
