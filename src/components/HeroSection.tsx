@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section id="accueil" className="relative h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-white pt-16 md:pt-0">
-      {/* Background Logo - Hidden on mobile */}
-      <div className="absolute inset-0 z-0 hidden md:flex items-center justify-center">
+      {/* Background Image - Hidden on mobile */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <img 
-          src="/LOGO.svg" 
-          alt="ECLOSION Logo" 
-          className="w-1/2 h-auto opacity-20" 
+          src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-30" 
         />
-        <div className="absolute inset-0 bg-white/50"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       {/* Content */}
