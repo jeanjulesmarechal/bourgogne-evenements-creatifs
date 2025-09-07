@@ -136,9 +136,11 @@ const ContactSection = () => {
                   Notre équipe vous rencontre pour comprendre vos enjeux et vous proposer 
                   des solutions sur-mesure.
                 </p>
-                <Button className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-montserrat font-semibold">
-                  Prendre rendez-vous
-                </Button>
+                <a href="mailto:contact@eclosion-events.fr?subject=Demande d'audit gratuit&body=Bonjour,%0D%0A%0D%0AJe souhaite bénéficier d'un audit gratuit pour mes besoins événementiels.%0D%0A%0D%0AMerci de me recontacter.%0D%0A%0D%0ACordialement,">
+                  <Button className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-montserrat font-semibold">
+                    Prendre rendez-vous
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           </div>

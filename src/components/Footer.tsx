@@ -5,21 +5,6 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-foreground py-12">
       <div className="container mx-auto px-4">
-        {/* Newsletter Signup */}
-        <div className="text-center mb-12">
-          <h3 className="text-2xl font-montserrat font-futura-bold mb-2">
-            Restons en contact
-          </h3>
-          <p className="text-foreground/80 font-montserrat mb-6 max-w-xl mx-auto">
-            Recevez nos dernières actualités, études de cas et inspirations directement dans votre boîte mail.
-          </p>
-          <form className="flex max-w-md mx-auto">
-            <Input type="email" placeholder="Votre adresse e-mail" className="bg-white rounded-r-none" />
-            <Button type="submit" className="bg-foreground hover:bg-foreground/90 text-background rounded-l-none">
-              S'inscrire
-            </Button>
-          </form>
-        </div>
 
         <div className="border-t border-border pt-12 grid md:grid-cols-3 gap-8">
           {/* Logo et description */}
@@ -47,7 +32,7 @@ const Footer = () => {
           <div>
             <h4 className="font-montserrat font-semibold mb-4">Contact</h4>
             <div className="space-y-2 font-montserrat text-sm text-foreground/80">
-              <p>📞 +33 3 80 XX XX XX</p>
+              <p>📞 +33 6 68 59 98 46</p>
               <p>✉️ contact@eclosion-events.fr</p>
             </div>
             <div className="flex space-x-4 mt-4">
@@ -63,7 +48,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="font-montserrat text-sm text-foreground/60">
-            © 2024 ECLOSION. Tous droits réservés.
+            © 2025 ECLOSION. Tous droits réservés.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="font-montserrat text-sm text-foreground/60 hover:text-primary transition-colors">
