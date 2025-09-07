@@ -31,7 +31,7 @@ Ce projet est construit avec les technologies modernes suivantes :
 
 ```bash
 # 1. Cloner le repository
-git clone <URL_DU_REPO>
+git clone [URL_DU_REPO]
 cd bourgogne-evenements-creatifs-main
 
 # 2. Installer les dépendances
@@ -41,7 +41,7 @@ npm install
 npm run dev
 ```
 
-Le site sera accessible à l'adresse : http://localhost:8080
+Le site sera accessible à l'adresse : http://localhost:5173
 
 ### Scripts disponibles
 
@@ -112,8 +112,12 @@ Les fichiers de production seront générés dans le dossier `dist/`.
 Créez un fichier `.env.local` pour les variables d'environnement :
 
 ```env
-VITE_API_URL=https://api.eclosion-events.fr
-VITE_CONTACT_EMAIL=contact@eclosion-events.fr
+VITE_API_URL=https://api.example.com
+VITE_CONTACT_EMAIL=contact@example.com
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_RECAPTCHA_SITE_KEY=your_recaptcha_key
 ```
 
 ## 🔧 Configuration
@@ -144,9 +148,9 @@ Ce projet est privé et propriétaire d'ECLOSION.
 
 ## 📞 Contact
 
-- **Site web** : [eclosion-events.fr](https://eclosion-events.fr)
-- **Email** : contact@eclosion-events.fr
-- **Localisation** : Bourgogne, France
+- **Site web** : [example.com](https://example.com)
+- **Email** : contact@example.com
+- **Localisation** : France
 
 ---
 

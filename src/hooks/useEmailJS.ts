@@ -106,11 +106,11 @@ export const useEmailJS = (): UseEmailJSReturn => {
         return false;
       }
 
-      // Vérification reCAPTCHA
-      if (!recaptchaToken) {
-        setSubmitError('Vérification de sécurité requise');
-        return false;
-      }
+      // Vérification reCAPTCHA (optionnel pour le moment)
+      // if (!recaptchaToken) {
+      //   setSubmitError('Vérification de sécurité requise');
+      //   return false;
+      // }
 
       // Préparation des données pour EmailJS
       const templateParams = {

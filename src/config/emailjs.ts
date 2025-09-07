@@ -3,13 +3,13 @@
 
 export const EMAILJS_CONFIG = {
   // Service ID - Utilise la variable d'environnement ou la valeur par défaut
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_xxxxxxx',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_8x9k2m7',
   
   // Template ID - Utilise la variable d'environnement ou la valeur par défaut
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_xxxxxxx',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact_eclosion',
   
   // Public Key - Utilise la variable d'environnement ou la valeur par défaut
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'xxxxxxxxxxxxxxxx',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY_HERE',
 };
 
 // Template EmailJS - Variables disponibles :
