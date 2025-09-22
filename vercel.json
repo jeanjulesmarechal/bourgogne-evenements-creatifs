@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "redirects": [
     {
       "source": "/(.*)",
@@ -9,7 +14,7 @@
           "value": "http"
         }
       ],
-      "destination": "https://eclosion-events.fr/$1",
+      "destination": "https://eclosion-evenements.fr/$1",
       "permanent": true
     }
   ],
