@@ -108,7 +108,7 @@ const ContactSection = () => {
                     <Mail className="w-5 h-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-montserrat font-semibold mb-2 text-foreground">Email</h4>
-                      <p className="font-montserrat text-foreground/80">contact@eclosion-events.fr</p>
+                      <p className="font-montserrat text-foreground/80">contact@eclosion-evenements.fr</p>
                     </div>
                   </div>
                   
@@ -136,7 +136,7 @@ const ContactSection = () => {
                   Notre équipe vous rencontre pour comprendre vos enjeux et vous proposer 
                   des solutions sur-mesure.
                 </p>
-                <a href="mailto:contact@eclosion-events.fr?subject=Demande d'audit gratuit&body=Bonjour,%0D%0A%0D%0AJe souhaite bénéficier d'un audit gratuit pour mes besoins événementiels.%0D%0A%0D%0AMerci de me recontacter.%0D%0A%0D%0ACordialement,">
+                <a href="mailto:contact@eclosion-evenements.fr?subject=Demande d'audit gratuit&body=Bonjour,%0D%0A%0D%0AJe souhaite bénéficier d'un audit gratuit pour mes besoins événementiels.%0D%0A%0D%0AMerci de me recontacter.%0D%0A%0D%0ACordialement,">
                   <Button className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-montserrat font-semibold">
                     Prendre rendez-vous
                   </Button>

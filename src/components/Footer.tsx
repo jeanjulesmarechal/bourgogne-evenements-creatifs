@@ -33,7 +33,7 @@ const Footer = () => {
             <h4 className="font-montserrat font-semibold mb-4">Contact</h4>
             <div className="space-y-2 font-montserrat text-sm text-foreground/80">
               <p>📞 +33 6 68 59 98 46</p>
-              <p>✉️ contact@eclosion-events.fr</p>
+              <p>✉️ contact@eclosion-evenements.fr</p>
             </div>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-foreground/80 hover:text-primary transition-colors font-montserrat">
