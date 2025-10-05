@@ -32,3 +32,4 @@ dist-ssr
 
 # Development files
 dev_server.log
+.vercel
