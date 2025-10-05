@@ -2,6 +2,8 @@
 
 **Votre évènement est né** - L'événement professionnel, repensé avec méthode.
 
+> 🚧 **Environnement de test** - Version staging pour validation équipe
+
 ## 📋 À propos du projet
 
 ECLOSION est une agence événementielle premium spécialisée dans l'organisation de séminaires, team-buildings et conventions d'entreprise. Notre approche méthodique et élégante accompagne PME, directions et institutions dans la création d'événements efficaces et maîtrisés.
