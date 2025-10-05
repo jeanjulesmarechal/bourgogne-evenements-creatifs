@@ -15,11 +15,5 @@
       "destination": "https://eclosion-evenements.fr/$1",
       "permanent": true
     }
-  ],
-  "env": {
-    "VITE_VERCEL_ENV": "@vercel-env",
-    "VITE_VERCEL_GIT_COMMIT_SHA": "@vercel-git-commit-sha",
-    "VITE_VERCEL_GIT_COMMIT_REF": "@vercel-git-commit-ref",
-    "VITE_BUILD_DATE": "@build-date"
-  }
+  ]
 }
