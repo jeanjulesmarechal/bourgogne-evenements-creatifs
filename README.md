@@ -3,6 +3,8 @@
 **Votre évènement est né** - L'événement professionnel, repensé avec méthode.
 
 > 🚧 **Environnement de test** - Version staging pour validation équipe
+> 
+> **Workflow test :** Push sur `staging` → Déploiement automatique sur `test.eclosion-evenements.fr`
 
 ## 📋 À propos du projet
 
