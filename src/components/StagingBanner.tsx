@@ -13,8 +13,10 @@ const StagingBanner: React.FC<StagingBannerProps> = ({
   branch = 'staging'
 }) => {
   // Ne s'affiche que si on est sur un environnement de staging/preview
-  const isStaging = window.location.hostname.includes('vercel.app') && 
-                   !window.location.hostname.includes('bourgogne-evenements-creatifs-main-cfgteqsvd');
+  const hostname = window.location.hostname;
+  const isStaging = hostname === 'test.eclosion-evenements.fr' || 
+                   hostname.includes('test.eclosion-evenements') ||
+                   (hostname.includes('vercel.app') && !hostname.includes('bourgogne-evenements-creatifs-main-cfgteqsvd'));
 
   if (!isStaging) return null;
 

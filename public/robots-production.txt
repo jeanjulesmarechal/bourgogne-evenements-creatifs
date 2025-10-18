@@ -1,0 +1,21 @@
+# Fichier robots.txt pour PRODUCTION (eclosion-evenements.fr)
+# Ce fichier AUTORISE l'indexation du site principal
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Sitemap (à configurer avec votre URL de sitemap si vous en avez un)
+# Sitemap: https://eclosion-evenements.fr/sitemap.xml
+

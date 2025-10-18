@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReCaptchaProvider from "./components/ReCaptchaProvider";
 import StagingBanner from "./components/StagingBanner";
+import SeoMetaTags from "./components/SeoMetaTags";
 import { useBuildInfo } from "./hooks/useBuildInfo";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
@@ -20,11 +21,16 @@ const AppContent = () => {
   
   return (
     <>
+      {/* Gestion dynamique des meta tags SEO - Bloque l'indexation sur staging */}
+      <SeoMetaTags />
+      
+      {/* Bannière visible sur test.eclosion-evenements.fr */}
       <StagingBanner 
         buildDate={buildInfo.buildDate}
         buildHash={buildInfo.buildHash}
         branch={buildInfo.branch}
       />
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

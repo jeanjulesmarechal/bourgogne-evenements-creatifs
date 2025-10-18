@@ -34,9 +34,14 @@ export const useBuildInfo = (): BuildInfo => {
     
     if (hostname.includes('localhost')) {
       environment = 'development';
+    } else if (hostname === 'test.eclosion-evenements.fr' || hostname.includes('test.eclosion-evenements')) {
+      // Domaine de test staging
+      environment = 'staging';
     } else if (hostname.includes('vercel.app') && !hostname.includes('bourgogne-evenements-creatifs-main-cfgteqsvd')) {
+      // Preview deployments Vercel
       environment = 'preview';
     } else if (hostname.includes('staging') || vercelEnv === 'preview') {
+      // Autres environnements staging
       environment = 'staging';
     }
     
