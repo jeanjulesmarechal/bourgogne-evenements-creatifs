@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useState } from "react";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useEmailJS } from "../hooks/useEmailJS";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,7 +24,6 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const { isSubmitting, submitError, submitSuccess, submitForm, resetForm } = useEmailJS();
 
   const handleInputChange = (field: string, value: string) => {
@@ -34,15 +32,9 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!executeRecaptcha) {
-      console.error('reCAPTCHA non disponible');
-      return;
-    }
 
     try {
-      const recaptchaToken = await executeRecaptcha('contact_form');
-      const success = await submitForm(formData, recaptchaToken);
+      const success = await submitForm(formData);
       
       if (success) {
         setIsSubmitted(true);
@@ -60,7 +52,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
-      console.error('Erreur reCAPTCHA:', error);
+      console.error('Erreur lors de l\'envoi:', error);
     }
   };
 

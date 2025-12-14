@@ -18,7 +18,7 @@ interface UseEmailJSReturn {
   isSubmitting: boolean;
   submitError: string | null;
   submitSuccess: boolean;
-  submitForm: (data: FormData, recaptchaToken?: string) => Promise<boolean>;
+  submitForm: (data: FormData) => Promise<boolean>;
   resetForm: () => void;
 }
 
@@ -90,7 +90,7 @@ export const useEmailJS = (): UseEmailJSReturn => {
     return true;
   };
 
-  const submitForm = useCallback(async (data: FormData, recaptchaToken?: string): Promise<boolean> => {
+  const submitForm = useCallback(async (data: FormData): Promise<boolean> => {
     try {
       setIsSubmitting(true);
       setSubmitError(null);
@@ -106,12 +106,6 @@ export const useEmailJS = (): UseEmailJSReturn => {
         return false;
       }
 
-      // Vérification reCAPTCHA
-      if (!recaptchaToken) {
-        setSubmitError('Vérification de sécurité requise. Veuillez réessayer.');
-        return false;
-      }
-
       // Préparation des données pour EmailJS
       const templateParams = {
         ...EMAILJS_TEMPLATE,
@@ -122,7 +116,6 @@ export const useEmailJS = (): UseEmailJSReturn => {
         project_type: data.projectType,
         budget: data.budget || 'Non renseigné',
         message: data.message || 'Aucun message',
-        'g-recaptcha-response': recaptchaToken, // EmailJS attend ce nom de paramètre
         timestamp: new Date().toLocaleString('fr-FR'),
       };
 
