@@ -1,7 +1,7 @@
 import { Target, Sparkles, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-const WhyChooseUsSection = () => {
+const WhyChooseUsSectionV2 = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const advantages = [
@@ -16,22 +16,22 @@ const WhyChooseUsSection = () => {
       description: "Notre équipe pluridisciplinaire vous accompagne de la stratégie à la coordination pour un événement maîtrisé de A à Z.",
     },
     {
-      icon: Star, // New icon
+      icon: Star,
       title: "Créativité & Sur-Mesure",
       description: "Nous traduisons vos valeurs et vos objectifs en une expérience unique et mémorable, conçue spécialement pour vous.",
     }
   ];
 
   return (
-    <section id="pourquoi-nous" className="py-20 md:py-20 py-4 bg-white">
+    <section id="pourquoi-nous" className="py-20 md:py-20 py-4 bg-[#611427]">
       <div className="container mx-auto px-4">
         {/* Desktop Version */}
         <div className="hidden md:block">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-montserrat font-futura-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-montserrat font-futura-bold text-white mb-4">
               Pourquoi nous choisir ?
             </h2>
-            <p className="text-lg text-foreground/80 font-montserrat max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 font-montserrat max-w-2xl mx-auto">
               Les piliers qui font de nous votre partenaire privilégié pour des événements d'exception.
             </p>
           </div>
@@ -43,18 +43,18 @@ const WhyChooseUsSection = () => {
                 className="text-center animate-scale-in p-6 rounded-lg transition-all duration-300"
                 style={{ 
                   animationDelay: `${index * 0.2}s`,
-                  backgroundColor: 'rgba(97, 20, 39, 0.05)',
-                  border: '1px solid rgba(97, 20, 39, 0.1)',
-                  boxShadow: '0 4px 20px rgba(97, 20, 39, 0.08)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <advantage.icon className="w-12 h-12 text-primary" />
+                  <advantage.icon className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-montserrat font-futura-bold text-foreground mb-2">
+                <h3 className="text-2xl font-montserrat font-futura-bold text-white mb-2" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}>
                   {advantage.title}
                 </h3>
-                <p className="text-foreground/80 font-montserrat leading-relaxed">
+                <p className="text-white/90 font-montserrat leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.2)' }}>
                   {advantage.description}
                 </p>
               </div>
@@ -66,13 +66,18 @@ const WhyChooseUsSection = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full px-6 py-4 flex items-center justify-between bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+            className="w-full px-6 py-4 flex items-center justify-between rounded-lg transition-colors backdrop-blur-md"
+            style={{
+              backgroundColor: 'rgba(97, 20, 39, 0.25)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+            }}
           >
-            <h2 className="text-xl font-montserrat font-futura-bold text-foreground">
+            <h2 className="text-xl font-montserrat font-futura-bold text-white">
               Pourquoi nous choisir ?
             </h2>
             <ChevronDown 
-              className={`w-5 h-5 text-gray-500 transition-transform ${
+              className={`w-5 h-5 text-white transition-transform ${
                 isOpen ? 'rotate-180' : ''
               }`} 
             />
@@ -80,7 +85,7 @@ const WhyChooseUsSection = () => {
           
           {isOpen && (
             <div className="mt-4 space-y-6">
-              <p className="text-foreground/80 font-montserrat text-center text-sm">
+              <p className="text-white/90 font-montserrat text-center text-sm">
                 Les piliers qui font de nous votre partenaire privilégié pour des événements d'exception.
               </p>
               {advantages.map((advantage, index) => (
@@ -88,18 +93,18 @@ const WhyChooseUsSection = () => {
                   key={index} 
                   className="text-center p-4 rounded-lg"
                   style={{
-                    backgroundColor: 'rgba(97, 20, 39, 0.05)',
-                    border: '1px solid rgba(97, 20, 39, 0.1)',
-                    boxShadow: '0 4px 20px rgba(97, 20, 39, 0.08)'
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
                   }}
                 >
                   <div className="flex justify-center mb-3">
-                    <advantage.icon className="w-10 h-10 text-primary" />
+                    <advantage.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-lg font-montserrat font-futura-bold text-foreground mb-2">
+                  <h3 className="text-lg font-montserrat font-futura-bold text-white mb-2" style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.3)' }}>
                     {advantage.title}
                   </h3>
-                  <p className="text-foreground/80 font-montserrat leading-relaxed text-sm">
+                  <p className="text-white/90 font-montserrat leading-relaxed text-sm" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.2)' }}>
                     {advantage.description}
                   </p>
                 </div>
@@ -112,4 +117,5 @@ const WhyChooseUsSection = () => {
   );
 };
 
-export default WhyChooseUsSection;
+export default WhyChooseUsSectionV2;
+

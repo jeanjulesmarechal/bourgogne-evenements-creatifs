@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReCaptchaProvider from "./components/ReCaptchaProvider";
 import StagingBanner from "./components/StagingBanner";
 import SeoMetaTags from "./components/SeoMetaTags";
+import ScrollToTop from "./components/ScrollToTop";
 import { useBuildInfo } from "./hooks/useBuildInfo";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
@@ -32,6 +33,7 @@ const AppContent = () => {
       />
       
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />

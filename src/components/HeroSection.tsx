@@ -33,8 +33,7 @@ const HeroSection = () => {
             <Link to="/contact">
               <Button
                 size="lg"
-                className="text-white font-montserrat font-semibold text-lg px-10 py-4 animate-scale-in shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{ backgroundColor: '#611427' }}
+                className="text-white bg-[#611427]/90 backdrop-blur-md border border-[#611427]/30 md:bg-[#611427] md:border-none font-montserrat font-semibold text-lg px-10 py-4 animate-scale-in shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-[#611427]/95 md:hover:bg-[#611427]/90"
               >
                 Prendre contact
               </Button>

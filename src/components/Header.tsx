@@ -3,8 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { scrollToSection } from "@/utils/navigation";
+import VersionToggle from "@/components/VersionToggle";
 
-const Header = () => {
+interface HeaderProps {
+  isV2?: boolean;
+  onVersionToggle?: () => void;
+}
+
+const Header = ({ isV2 = false, onVersionToggle }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,8 +35,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
           <Link to="/" className="relative" onClick={scrollToTop}>
             {/* Logo complet - visible au début */}
             <div className={`transition-all duration-500 ease-in-out ${isScrolled ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
@@ -49,14 +57,21 @@ const Header = () => {
               />
             </div>
           </Link>
-        </div>
+          </div>
 
-        {/* Navigation desktop */}
-        <nav className="hidden md:flex items-center space-x-8">
+          {/* Navigation desktop */}
+          <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-foreground hover:text-primary transition-colors font-montserrat">
             Accueil
           </Link>
-          <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
+          <a 
+            href="#services" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('services');
+            }}
+            className="text-foreground hover:text-primary transition-colors font-montserrat cursor-pointer"
+          >
             Notre Expertise
           </a>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
@@ -64,22 +79,30 @@ const Header = () => {
           </Link>
         </nav>
 
-        <div className="hidden md:block">
-          <Link to="/contact">
-            <Button className="bg-foreground hover:bg-foreground/90 text-background font-montserrat font-semibold">
-              Prendre contact
-            </Button>
-          </Link>
-        </div>
+          <div className="hidden md:block">
+            <Link to="/contact">
+              <Button className="bg-foreground hover:bg-foreground/90 text-background font-montserrat font-semibold">
+                Prendre contact
+              </Button>
+            </Link>
+          </div>
 
-        {/* Menu mobile */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Menu mobile */}
+          <button
+            className="md:hidden text-foreground"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        
+        {/* Version Toggle - En bas de la navbar */}
+        {onVersionToggle && (
+          <div className="flex justify-center mt-2 pb-1">
+            <VersionToggle isV2={isV2} onToggle={onVersionToggle} variant="inline" darkMode={false} />
+          </div>
+        )}
 
         {/* Navigation mobile */}
         {isMenuOpen && (
@@ -88,7 +111,14 @@ const Header = () => {
               <Link to="/" className="text-foreground hover:text-primary transition-colors font-montserrat">
                 Accueil
               </Link>
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
+              <a 
+                href="#services" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('services');
+                }}
+                className="text-foreground hover:text-primary transition-colors font-montserrat cursor-pointer"
+              >
                 Notre Expertise
               </a>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
