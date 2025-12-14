@@ -21,7 +21,7 @@ const StagingBanner: React.FC<StagingBannerProps> = ({
   if (!isStaging) return null;
 
   return (
-    <div className="fixed top-0 right-0 z-50 m-4 bg-yellow-500 text-black p-3 rounded-lg shadow-lg border-2 border-yellow-600">
+    <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[100] m-4 bg-yellow-500 text-black p-3 rounded-lg shadow-lg border-2 border-yellow-600">
       <div className="flex items-center gap-2 mb-2">
         <AlertTriangle className="h-4 w-4" />
         <span className="font-bold text-sm">VERSION STAGING</span>
