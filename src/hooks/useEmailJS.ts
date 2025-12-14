@@ -106,11 +106,11 @@ export const useEmailJS = (): UseEmailJSReturn => {
         return false;
       }
 
-      // Vérification reCAPTCHA (optionnel pour le moment)
-      // if (!recaptchaToken) {
-      //   setSubmitError('Vérification de sécurité requise');
-      //   return false;
-      // }
+      // Vérification reCAPTCHA
+      if (!recaptchaToken) {
+        setSubmitError('Vérification de sécurité requise. Veuillez réessayer.');
+        return false;
+      }
 
       // Préparation des données pour EmailJS
       const templateParams = {
@@ -122,7 +122,7 @@ export const useEmailJS = (): UseEmailJSReturn => {
         project_type: data.projectType,
         budget: data.budget || 'Non renseigné',
         message: data.message || 'Aucun message',
-        recaptcha_token: recaptchaToken,
+        'g-recaptcha-response': recaptchaToken, // EmailJS attend ce nom de paramètre
         timestamp: new Date().toLocaleString('fr-FR'),
       };
 
