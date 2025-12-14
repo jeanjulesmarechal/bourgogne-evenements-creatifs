@@ -1,50 +1,21 @@
-# Fichier robots.txt - Configuration pour empêcher l'indexation du site de test
-# Ce fichier bloque TOUS les robots sur test.eclosion-evenements.fr
-# La version production utilise un robots.txt différent
+# Fichier robots.txt pour PRODUCTION (eclosion-evenements.fr)
+# Ce fichier AUTORISE l'indexation du site principal
 
-# Bloquer tous les robots - AUCUNE indexation
-User-agent: *
-Disallow: /
-
-# Bloquer spécifiquement Google
 User-agent: Googlebot
-Disallow: /
+Allow: /
 
-User-agent: Googlebot-Image
-Disallow: /
-
-User-agent: Googlebot-News
-Disallow: /
-
-# Bloquer Bing
 User-agent: Bingbot
-Disallow: /
+Allow: /
 
-User-agent: BingPreview
-Disallow: /
-
-# Bloquer les réseaux sociaux
 User-agent: Twitterbot
-Disallow: /
+Allow: /
 
 User-agent: facebookexternalhit
-Disallow: /
+Allow: /
 
-User-agent: LinkedInBot
-Disallow: /
+User-agent: *
+Allow: /
 
-# Bloquer les autres robots courants
-User-agent: Slurp
-Disallow: /
+# Sitemap (à configurer avec votre URL de sitemap si vous en avez un)
+# Sitemap: https://eclosion-evenements.fr/sitemap.xml
 
-User-agent: DuckDuckBot
-Disallow: /
-
-User-agent: Baiduspider
-Disallow: /
-
-User-agent: YandexBot
-Disallow: /
-
-# Pas de sitemap sur staging
-Sitemap:
