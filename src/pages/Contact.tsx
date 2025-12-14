@@ -297,7 +297,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Téléphone</h4>
-                        <p className="font-montserrat text-foreground/80">+33 6 68 59 98 46</p>
+                        <p className="font-montserrat text-foreground/80"><a href="tel:+33668599846" className="hover:text-primary transition-colors">+33 6 68 59 98 46</a></p>
                         <p className="font-montserrat text-sm text-foreground/60 mt-1">Lun - Ven : 9h00 - 18h00</p>
                       </div>
                     </div>
@@ -312,7 +312,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-montserrat font-futura-bold text-lg mb-2 text-foreground">Email</h4>
-                        <p className="font-montserrat text-foreground/80">contact@eclosion-evenements.fr</p>
+                        <p className="font-montserrat text-foreground/80"><a href="mailto:contact@eclosion-evenements.fr" className="hover:text-primary transition-colors">contact@eclosion-evenements.fr</a></p>
                         <p className="font-montserrat text-sm text-foreground/60 mt-1">Réponse sous 24h</p>
                       </div>
                     </div>

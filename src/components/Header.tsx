@@ -10,6 +10,13 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -23,13 +30,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="relative">
+          <Link to="/" className="relative" onClick={scrollToTop}>
             {/* Logo complet - visible au début */}
             <div className={`transition-all duration-500 ease-in-out ${isScrolled ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
               <img 
                 src="/LOGO.svg" 
                 alt="ECLOSION" 
-                className="h-8 md:h-10 w-auto"
+                className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </div>
             
@@ -38,10 +45,10 @@ const Header = () => {
               <img 
                 src="/ROUE.svg" 
                 alt="ECLOSION" 
-                className="h-8 md:h-10 w-auto"
+                className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Navigation desktop */}
@@ -51,12 +58,6 @@ const Header = () => {
           </Link>
           <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
             Notre Expertise
-          </a>
-          <a href="#pourquoi-nous" className="text-foreground hover:text-primary transition-colors font-montserrat">
-            Pourquoi nous choisir
-          </a>
-          <a href="#mission" className="text-foreground hover:text-primary transition-colors font-montserrat">
-            Notre Mission
           </a>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
             Contact
@@ -89,12 +90,6 @@ const Header = () => {
               </Link>
               <a href="#services" className="text-foreground hover:text-primary transition-colors font-montserrat">
                 Notre Expertise
-              </a>
-              <a href="#pourquoi-nous" className="text-foreground hover:text-primary transition-colors font-montserrat">
-                Pourquoi nous choisir
-              </a>
-              <a href="#mission" className="text-foreground hover:text-primary transition-colors font-montserrat">
-                Notre Mission
               </a>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-montserrat">
                 Contact

@@ -100,7 +100,7 @@ const ContactSection = () => {
                     <Phone className="w-5 h-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-montserrat font-semibold mb-2 text-foreground">Téléphone</h4>
-                      <p className="font-montserrat text-foreground/80">+33 6 68 59 98 46</p>
+                      <p className="font-montserrat text-foreground/80"><a href="tel:+33668599846" className="hover:text-primary transition-colors">+33 6 68 59 98 46</a></p>
                     </div>
                   </div>
                   
@@ -108,7 +108,7 @@ const ContactSection = () => {
                     <Mail className="w-5 h-5 text-primary mr-3 mt-1" />
                     <div>
                       <h4 className="font-montserrat font-semibold mb-2 text-foreground">Email</h4>
-                      <p className="font-montserrat text-foreground/80">contact@eclosion-evenements.fr</p>
+                      <p className="font-montserrat text-foreground/80"><a href="mailto:contact@eclosion-evenements.fr" className="hover:text-primary transition-colors">contact@eclosion-evenements.fr</a></p>
                     </div>
                   </div>
                   
