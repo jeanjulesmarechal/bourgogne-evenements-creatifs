@@ -35,14 +35,14 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // if (!executeRecaptcha) {
-    //   console.error('reCAPTCHA non disponible');
-    //   return;
-    // }
+    if (!executeRecaptcha) {
+      console.error('reCAPTCHA non disponible');
+      return;
+    }
 
     try {
-      // const recaptchaToken = await executeRecaptcha('contact_form');
-      const success = await submitForm(formData);
+      const recaptchaToken = await executeRecaptcha('contact_form');
+      const success = await submitForm(formData, recaptchaToken);
       
       if (success) {
         setIsSubmitted(true);
