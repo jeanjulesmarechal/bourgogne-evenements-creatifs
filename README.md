@@ -138,6 +138,17 @@ Le projet utilise Tailwind CSS avec une configuration personnalisée dans `tailw
 
 Configuration ESLint moderne avec règles pour React et TypeScript dans `eslint.config.js`.
 
+## 📚 Documentation
+
+Toute la documentation est organisée dans le dossier `docs/` :
+
+- **Setup** : Configuration des services (EmailJS, etc.)
+- **Deployment** : Guides de déploiement Vercel et architecture
+- **SEO** : Configuration SEO et multi-environnements
+- **Development** : Contexte projet et historique des modifications
+
+Voir `docs/README.md` pour l'index complet.
+
 ## 📝 Contribution
 
 1. Fork le projet
