@@ -9,6 +9,7 @@ import WhyChoose from './components/WhyChoose.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import CookieBanner from './components/CookieBanner.vue'
+import SeoHead from './components/SeoHead.vue'
 
 
 onMounted(() => {
@@ -39,6 +40,7 @@ onMounted(() => {
 
 <template>
   <div id="app">
+    <SeoHead />
     <Header />
     <Hero />
     <WhyChoose />

@@ -16,6 +16,6 @@ Allow: /
 User-agent: *
 Allow: /
 
-# Sitemap (à configurer avec votre URL de sitemap si vous en avez un)
-# Sitemap: https://eclosion-evenements.fr/sitemap.xml
+# Sitemap
+Sitemap: https://eclosion-evenements.fr/sitemap.xml
 
