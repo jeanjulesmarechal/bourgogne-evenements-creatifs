@@ -184,7 +184,7 @@ onUnmounted(() => {
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <iframe src="/2026_01_Présentation_ECLOSION_WEB.pdf" class="image-modal-img" style="width: 100%; height: 90vh; border: none;"></iframe>
+          <iframe src="/2026_01_Présentation_ECLOSION_WEB.pdf" class="image-modal-img" style="width: 100%; height: 100%; border: none;"></iframe>
         </div>
       </div>
     </Transition>
@@ -897,7 +897,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   z-index: 999999 !important;
-  padding: 2rem;
+  padding: 1rem;
   overflow-y: auto;
   isolation: isolate;
   transform: translateZ(0);
@@ -905,10 +905,18 @@ onUnmounted(() => {
   will-change: transform;
 }
 
+@media (min-width: 769px) {
+  .image-modal-overlay {
+    padding: 0.5rem;
+  }
+}
+
 .image-modal-container {
   position: relative !important;
   max-width: 90vw;
   max-height: 90vh;
+  width: 95vw;
+  height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -920,9 +928,9 @@ onUnmounted(() => {
 
 .image-modal-img {
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 100%;
   width: 100%;
-  height: 90vh;
+  height: 100%;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
   background: #fff;
@@ -986,6 +994,19 @@ onUnmounted(() => {
   transform: scale(0.9);
 }
 
+@media (min-width: 769px) {
+  .image-modal-container {
+    width: 98vw;
+    height: 98vh;
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+
+  .image-modal-img {
+    border-radius: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .image-modal-overlay {
     padding: 1rem;
@@ -993,10 +1014,13 @@ onUnmounted(() => {
 
   .image-modal-container {
     max-width: 95vw;
+    width: 95vw;
+    height: 90vh;
   }
 
   .image-modal-img {
     max-height: 85vh;
+    height: 85vh;
   }
 
   .image-modal-close {
