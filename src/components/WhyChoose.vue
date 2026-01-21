@@ -116,17 +116,17 @@ onUnmounted(() => {
             d'émotion.
           </p>
 
-          <a href="/2026_01_Présentation_ECLOSION_WEB.pdf" target="_blank" class="pdf-button" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem;">
+          <button class="pdf-button" @click="scrollToDownloadPdf">
             <span class="icon">↓</span>
             Visualiser ou Télécharger notre plaquette
-          </a>
+          </button>
         </div>
       </div>
 
       <!-- Section L'Excellence Eclosion -->
       <div class="excellence-section">
         <div class="excellence-header scroll-reveal">
-          <h2 class="excellence-title">L'Excellence Eclosion</h2>
+          <h2 class="excellence-title">L'excellence Eclosion</h2>
           <p class="excellence-subtitle">
             Nous allions précision logistique et vision artistique pour sublimer chaque instant.
           </p>
@@ -921,11 +921,11 @@ onUnmounted(() => {
 .image-modal-img {
   max-width: 100%;
   max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 90vh;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  background: #fff;
 }
 
 .image-modal-close {

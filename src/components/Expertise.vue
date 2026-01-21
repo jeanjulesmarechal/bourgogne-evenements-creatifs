@@ -69,7 +69,7 @@ const scrollToContact = () => {
   <section id="expertise" class="expertise">
     <div class="expertise-container">
       <div class="expertise-header scroll-reveal">
-        <h2 class="expertise-main-title">l'événementiel Haute Couture</h2>
+        <h2 class="expertise-main-title">L'événementiel Haute Couture</h2>
         <p class="expertise-intro">
           Nous façonnons des moments d'exception où chaque détail compte. Découvrez les quatre
           dimensions qui font la singularité de notre approche.
