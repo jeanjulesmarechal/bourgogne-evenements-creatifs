@@ -69,7 +69,7 @@ const scrollToContact = () => {
   <section id="expertise" class="expertise">
     <div class="expertise-container">
       <div class="expertise-header scroll-reveal">
-        <h2 class="expertise-main-title">L'événementiel Haute Couture</h2>
+        <h2 class="expertise-main-title">L'Evénementiel Haute Couture</h2>
         <p class="expertise-intro">
           Nous façonnons des moments d'exception où chaque détail compte. Découvrez les quatre
           dimensions qui font la singularité de notre approche.
@@ -122,7 +122,7 @@ const scrollToContact = () => {
 .expertise-main-title {
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 400;
-  letter-spacing: -2px;
+  letter-spacing: 2px;
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.95);
