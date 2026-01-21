@@ -4,6 +4,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 const showImageModal = ref(false)
 
 const scrollToDownloadPdf = () => {
+  // Afficher le PDF dans la modale
   showImageModal.value = true
   document.body.style.overflow = 'hidden'
 }
@@ -115,10 +116,10 @@ onUnmounted(() => {
             d'émotion.
           </p>
 
-          <button class="pdf-button" @click="scrollToDownloadPdf">
+          <a href="/2026_01_Présentation_ECLOSION_WEB.pdf" target="_blank" class="pdf-button" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem;">
             <span class="icon">↓</span>
             Visualiser ou Télécharger notre plaquette
-          </button>
+          </a>
         </div>
       </div>
 
@@ -183,7 +184,7 @@ onUnmounted(() => {
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <img src="/p.jpg" alt="Plaquette Eclosion" class="image-modal-img" />
+          <iframe src="/2026_01_Présentation_ECLOSION_WEB.pdf" class="image-modal-img" style="width: 100%; height: 90vh; border: none;"></iframe>
         </div>
       </div>
     </Transition>
