@@ -642,7 +642,7 @@ onUnmounted(() => {
 .excellence-title {
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 400;
-  letter-spacing: -2px;
+  letter-spacing: 2px;
   margin: 0 0 1.5rem 0;
   font-family: 'Prata', serif;
   text-shadow: 0 2px 20px rgba(168, 61, 82, 0.3);
@@ -1009,24 +1009,29 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .image-modal-overlay {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .image-modal-container {
-    max-width: 95vw;
-    width: 95vw;
-    height: 90vh;
+    max-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
   }
 
   .image-modal-img {
-    max-height: 85vh;
-    height: 85vh;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
   }
 
   .image-modal-close {
-    top: -40px;
-    width: 36px;
-    height: 36px;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
   }
 }
 </style>
