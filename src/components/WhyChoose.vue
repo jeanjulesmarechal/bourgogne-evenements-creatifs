@@ -3,8 +3,23 @@ import { onMounted, onUnmounted, ref } from 'vue'
 
 const showImageModal = ref(false)
 
+const pdfUrl = '/2026_01_Présentation_ECLOSION_WEB.pdf'
+
+const isIOS = () => {
+  if (typeof navigator === 'undefined') return false
+  // iOS inclut Safari ET Chrome (les deux utilisent le même moteur UA)
+  return /iPad|iPhone|iPod/i.test(navigator.userAgent)
+}
+
 const scrollToDownloadPdf = () => {
-  // Afficher le PDF dans la modale
+  // iOS Safari/Chrome: l'iframe PDF est instable (zoom/viewport).
+  // On ouvre donc le PDF dans le viewer natif du navigateur pour une UX fiable.
+  if (isIOS()) {
+    window.open(pdfUrl, '_blank', 'noopener,noreferrer')
+    return
+  }
+
+  // Desktop: afficher le PDF dans la modale
   showImageModal.value = true
   document.body.style.overflow = 'hidden'
 }
@@ -184,7 +199,7 @@ onUnmounted(() => {
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <iframe src="/2026_01_Présentation_ECLOSION_WEB.pdf" class="image-modal-img" style="width: 100%; height: 100%; border: none;"></iframe>
+          <iframe :src="pdfUrl" class="image-modal-img" style="width: 100%; height: 100%; border: none;"></iframe>
         </div>
       </div>
     </Transition>
