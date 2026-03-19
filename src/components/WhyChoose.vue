@@ -900,9 +900,10 @@ onUnmounted(() => {
   padding: 1rem;
   overflow-y: auto;
   isolation: isolate;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: transform;
+  /* iOS Safari peut "zoom" le PDF si le rendu est impacté par transform */
+  transform: none !important;
+  -webkit-transform: none !important;
+  will-change: auto;
 }
 
 @media (min-width: 769px) {
@@ -921,9 +922,10 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   z-index: 1000000 !important;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: transform;
+  /* iOS Safari peut "zoom" le PDF si le rendu est impacté par transform */
+  transform: none !important;
+  -webkit-transform: none !important;
+  will-change: auto;
 }
 
 .image-modal-img {
@@ -1011,7 +1013,9 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .image-modal-overlay {
-    padding: 0.5rem;
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
   }
 
   .image-modal-container {
@@ -1019,12 +1023,14 @@ onUnmounted(() => {
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
+    display: block;
   }
 
   .image-modal-img {
     max-height: 100vh;
     height: 100vh;
     border-radius: 0;
+    display: block;
   }
 
   .image-modal-close {
