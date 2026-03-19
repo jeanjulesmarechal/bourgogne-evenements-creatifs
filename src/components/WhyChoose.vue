@@ -973,7 +973,9 @@ onUnmounted(() => {
 
 .image-modal-enter-active .image-modal-container,
 .image-modal-leave-active .image-modal-container {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  /* iOS Safari rend parfois un PDF "zoomé" si l'iframe se monte pendant un scale.
+     On garde une animation d'opacité uniquement. */
+  transition: opacity 0.3s ease;
 }
 
 .image-modal-enter-from {
@@ -982,7 +984,7 @@ onUnmounted(() => {
 
 .image-modal-enter-from .image-modal-container {
   opacity: 0;
-  transform: scale(0.9);
+  transform: none;
 }
 
 .image-modal-leave-to {
@@ -991,7 +993,7 @@ onUnmounted(() => {
 
 .image-modal-leave-to .image-modal-container {
   opacity: 0;
-  transform: scale(0.9);
+  transform: none;
 }
 
 @media (min-width: 769px) {
